@@ -1,3 +1,8 @@
+.navbar{
+    background: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
 .navbar-brand{
     color: rgb(15, 84, 145);
 }

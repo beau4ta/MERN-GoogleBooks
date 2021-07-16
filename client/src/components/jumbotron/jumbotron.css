@@ -1,7 +1,8 @@
 .jumbotron{
-    background-color: rgb(15, 84, 145);
-    margin-left: 30px;
-    margin-right: 30px;
+    background-color: rgb(22, 104, 176);
+    border: inset rgb(15, 84, 145);
+    margin: 30px;
     color: white;
     border-radius: 15px;
+    font-family: 'Quicksand', sans-serif;
 }
