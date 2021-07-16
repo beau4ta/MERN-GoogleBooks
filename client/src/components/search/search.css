@@ -1,0 +1,14 @@
+.search-container{
+    border: inset rgb(15, 84, 145);
+    margin: 30px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.search-title{
+    margin-bottom: 20px;
+}
+
+.search-bar{
+    margin-bottom: 20px;
+}
