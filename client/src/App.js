@@ -1,25 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import { HashRouter as Router, Route } from 'react-router-dom';
 import background from './assets/booksbg.jpeg';
-import Navbar from './components/navbar/navbar';
-import Jumbotron from './components/jumbotron/jumbotron';
-import Search from './components/search/search';
+import Search from './pages/Search';
 
-
-function App() {
-  return (
+const App = () => {
+  return(
     <Router>
-    <div className="App">
-      <div className='background' style={{ backgroundImage: `url(${background})`}}>
-     <Navbar />
-     <Jumbotron />
-    <Route exact path='/' component={Search} />
-    </div>
-    </div>
+      <div  className='background' style={{ backgroundImage: `url(${background})`}}>
+        <Route exact path='/' component={Search} />
+        {/* <Route exact path='/saved' component={Saved} /> */}
+      </div>
     </Router>
-  );
+ )
 }
-
 
 export default App;
