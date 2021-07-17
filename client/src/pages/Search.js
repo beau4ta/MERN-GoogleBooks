@@ -9,28 +9,32 @@ class Search extends Component {
     state = {
         search: '',
         books: [],
-        results: [],
-        title: '',
+        error: '',
+        message: ''
       }
     
       handleInputChange = event => {
         this.setState({ search: event.target.value })
-    
-        API.getSearchBooks(this.state.title)
-        .then(res => {
-          this.setState({ results: res.data.items })
-        })
-        .catch(err => console.log(err));
-    
       }
+
+      handleFormSubmit = event => {
+          event.preventDefault();
+          API.getSearchBooks()
+          .then(res => {
+              console.log(res)
+              this.setState({ books: [...res.data.items ]})
+          })
+          .catch(err => console.log(err));
+      };
     
       render() {
         return (
             <div>
-           <Navbar />
-           <Jumbotron />
-          <SearchForm
-           
+            <Navbar />
+            <Jumbotron />
+            <SearchForm
+            handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}
             />
             <Results />
           </div>

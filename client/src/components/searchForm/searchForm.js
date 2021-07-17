@@ -13,6 +13,7 @@ const Search = (props) => {
             value={props.search}
             onChange={props.handleInputChange}
             />
+            <button className='searchBtn' onClick={props.handleFormSubmit}><i class="fas fa-search"></i></button>
         </div>
         </div>
     )
