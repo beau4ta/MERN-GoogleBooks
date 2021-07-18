@@ -8,6 +8,8 @@
 
 .search-title{
     margin-bottom: 20px;
+    color: rgb(15, 84, 145);
+    font-family: 'Quicksand', sans-serif;
 }
 
 .search-bar{
@@ -19,4 +21,9 @@
     color: white;
     border-radius: 10px;
     width: 50px;
+}
+
+.searchBtn:hover{
+    transform: scale(1.05);
+    box-shadow: 1px 1px rgb(8, 46, 79);
 }

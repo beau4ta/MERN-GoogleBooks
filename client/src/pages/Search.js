@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Navbar from '../components/navbar/navbar';
 import Jumbotron from '../components/jumbotron/jumbotron';
 import SearchForm from '../components/searchForm/searchForm';
-import Results from '../components/results/results';
 import API from '../utils/API';
+import SearchResult from '../components/book';
+import Footer from '../components/footer/footer';
 
 class Search extends Component {
     state = {
@@ -19,13 +20,25 @@ class Search extends Component {
 
       handleFormSubmit = event => {
           event.preventDefault();
-          API.getSearchBooks()
+          API.getSearchBooks(this.state.search)
           .then(res => {
-              console.log(res)
+              console.log(res, res.data.items[0].volumeInfo.title, res.data.items[0].volumeInfo.authors)
               this.setState({ books: [...res.data.items ]})
           })
           .catch(err => console.log(err));
       };
+
+      saveBook = book => {
+        API.saveBook({
+          title: book.title,
+          author: book.author,
+          description: book.description,
+          image: book.image,
+          link: book.link
+        })
+        .then(res => console.log("Book Saved!", res))
+        .catch(err => console.log(err.response))
+      }
     
       render() {
         return (
@@ -36,7 +49,11 @@ class Search extends Component {
             handleInputChange={this.handleInputChange}
             handleFormSubmit={this.handleFormSubmit}
             />
-            <Results />
+            <SearchResult 
+            books={this.state.books}
+            saveBook={book => this.saveBook(book)}
+            />
+            <Footer />
           </div>
         );
       }

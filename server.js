@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
-const routes =- require('./routes')
+const routes = require('./routes')
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -23,7 +23,7 @@ app.get("*", (req, res) => {
 });
 
 //Connect to MongoDB
-mongoose.connect(process.envMONGODB_URI || 'mongodb://localhost/googlebooks');
+mongoose.connect(process.envMONGODB_URI || 'mongodb://localhost/googlebooks'), { useUnifiedTopology: true };
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

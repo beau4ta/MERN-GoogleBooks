@@ -1,0 +1,45 @@
+.result-container{
+    background-color: white;
+    margin: 30px;
+    padding: 20px;
+    border: inset rgb(15, 84, 145);
+    border-radius: 10px;
+}
+
+.result-title{
+    color: rgb(15, 84, 145);
+    font-family: 'Quicksand', sans-serif;
+}
+
+.book-container{
+    padding: 10px;
+    border: inset rgb(15, 84, 145);
+    border-radius: 10px;
+    margin: 10px; 
+}
+
+.book-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-info{
+    margin: 20px;
+}
+
+.saveBtn,
+.viewBtn{
+    background-color: rgb(15, 84, 145);
+    color: white;
+    border-radius: 10px;
+    width: 50px;
+    margin-bottom: 10px;
+    margin-right: 2px;
+}
+
+.saveBtn:hover,
+.viewBtn:hover{
+    transform: scale(1.05);
+    box-shadow: 1px 1px rgb(8, 46, 79);
+}
