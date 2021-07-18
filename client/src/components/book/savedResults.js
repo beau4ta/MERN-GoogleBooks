@@ -1,26 +1,26 @@
-import React from 'react'
+import React from "react";
+import '../results/listResults.css'
 import ListResults from '../results/listResults';
-import '../results/listResults.css';
 
-const SearchResult = props => {
+const SavedResult = props => {
     const { saveBook } = props;
-
-    return (props.books.length === 0) ? (
-       
-        <div className="result-container">
-            <div className="result-title">
-                <h3>Search Results:</h3>
-            </div>
-        </div>
+    const { deleteBook } = props;
     
-) : (
-        
+    return (props.books.length === 0) ? (
+
             <div className="result-container">
                 <div className="result-title">
-                    <h3>Search Results:</h3>
-                    {props.books.map(book => {
-                        return (
-                            <div>
+                    <h3>Books that You Saved</h3>
+                </div>
+            </div>
+    ) : (
+
+                <div className="result-container">
+                    <div className="result-title">
+                        <h3>Books that You Saved</h3>
+                        {props.books.map(book => {
+                            return (
+                                <div>
                             <ListResults
                              key={book.id}
                              title={book.volumeInfo.title}
@@ -29,14 +29,13 @@ const SearchResult = props => {
                              infoLink={book.volumeInfo.infoLink}
                              image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "No Image Available"}
                              saveBook={saveBook}
+                             deleteBook={deleteBook}
                              />
                              </div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
                 </div>
-            </div>
-        
-    )
+        )
 }
-
-export default SearchResult;
+export default SavedResult

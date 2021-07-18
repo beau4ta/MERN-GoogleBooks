@@ -3,7 +3,7 @@ import Navbar from '../components/navbar/navbar';
 import Jumbotron from '../components/jumbotron/jumbotron';
 import SearchForm from '../components/searchForm/searchForm';
 import API from '../utils/API';
-import SearchResult from '../components/book';
+import SearchResult from '../components/book/searchResults';
 import Footer from '../components/footer/footer';
 
 class Search extends Component {
