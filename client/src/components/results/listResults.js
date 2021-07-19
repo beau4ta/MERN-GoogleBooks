@@ -6,6 +6,8 @@ const ListResults = (props) => {
     const { saveBook } = props;
     const { deleteBook } = props;
 
+    console.log(props);
+
     if(!saveBook){
         return(
             <div className='book-container d-flex' key={props._id}>

@@ -24,10 +24,11 @@ const SavedResult = props => {
                             <ListResults
                              key={book.id}
                              title={book.title}
-                             author={book.authors}
+                             author={book.author}
                              description={book.description}
                              infoLink={book.infoLink}
-                             image={book.imageLinks ? book.imageLinks.thumbnail : "No Image Available"}
+                             imageLinks={book.imageLinks ? book.imageLinks.medium : "No Image Available"}
+                             _id={book._id}
                              saveBook={saveBook}
                              deleteBook={deleteBook}
                              />
