@@ -21,7 +21,7 @@ const ListResults = (props) => {
             </div>
             <div className='button-container'>
                 <button className='deleteBtn' id={props._id} onClick={() => deleteBook(props._id)}><i className="fas fa-minus"></i></button>
-                <button className='viewBtn'><a href={props.link} target="_blank"><i className="fas fa-eye"></i></a></button>
+                <a href={props.infoLink} target="_blank"><button className='viewBtn'><i className="fas fa-eye"></i></button></a>
             </div>
         </div>
         )
@@ -38,7 +38,7 @@ const ListResults = (props) => {
                 </div>
                 <div className='button-container'>
                     <button className='saveBtn' onClick={() => saveBook(props)}><i className="fas fa-plus"></i></button>
-                    <a href={props.link}><button className='viewBtn'><i className="fas fa-eye"></i></button></a>
+                    <a href={props.infoLink} target='_blank'><button className='viewBtn'><i className="fas fa-eye"></i></button></a>
                 </div>
             </div>
         )

@@ -5,6 +5,7 @@ import ListResults from '../results/listResults';
 const SavedResult = props => {
     const { saveBook } = props;
     const { deleteBook } = props;
+    console.log(props)
     
     return (props.books.length === 0) ? (
 
@@ -26,10 +27,9 @@ const SavedResult = props => {
                              title={book.title}
                              author={book.author}
                              description={book.description}
-                             infoLink={book.infoLink}
-                             imageLinks={book.imageLinks ? book.imageLinks.medium : "No Image Available"}
+                             link={book.link}
+                             image={book.image}
                              _id={book._id}
-                             saveBook={saveBook}
                              deleteBook={deleteBook}
                              />
                              </div>

@@ -6,6 +6,7 @@ const SearchResult = props => {
     const { saveBook } = props;
     const { deleteBook } = props;
 
+
     return (props.books.length === 0) ? (
        
         <div className="result-container">
@@ -23,13 +24,13 @@ const SearchResult = props => {
                             <div>
                             <ListResults
                              key={book.id}
-                             title={book.volumeInfo.title}
-                             author={book.volumeInfo.authors}
-                             description={book.volumeInfo.description}
-                             infoLink={book.volumeInfo.infoLink}
-                             image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "No Image Available"}
+                             title={book.title}
+                             author={book.author}
+                             description={book.description}
+                             link={book.link}
+                             image={book.image}
+                             _id={book._id}
                              saveBook={saveBook}
-                             deleteBook={deleteBook}
                              />
                              </div>
                         );
