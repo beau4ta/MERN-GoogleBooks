@@ -8,8 +8,8 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg">
   <div className="container-fluid">
   <img src={logo} className="App-logo" alt="logo" />
-    <a className="navbar-brand">MERN Google Books</a>
-    <div className="collapse navbar-collapse" id="navbarNav">
+    <a className="navbar-brand" href='/'>MERN Google Books</a>
+    <div className="empty" id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item">
           <Link className="link" to="/">Search</Link>

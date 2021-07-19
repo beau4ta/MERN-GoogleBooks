@@ -29,7 +29,8 @@
 }
 
 .saveBtn,
-.viewBtn{
+.viewBtn,
+.deleteBtn{
     background-color: rgb(15, 84, 145);
     color: white;
     border-radius: 10px;

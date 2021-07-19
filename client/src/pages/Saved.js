@@ -7,22 +7,21 @@ import Footer from '../components/footer/footer';
 
 class Saved extends Component {
     state = {
-        results: []
+        books: []
     }
 
     componentDidMount() {
         API.getBooks()
         .then(res => {
-            this.setState({ results: res.data });
-            console.log(this.state.results)
+            this.setState({ books: res.data });
+            console.log(this.state.books)
         })
         .catch(err => console.log(err))
     }
 
-    deleteBook = book => {
-        API.deleteBook(book)
-        .then(res => this.componentDidMount())
-        .catch(err => console.log(err));
+    deleteBook = id => {
+        API.deleteBook(id).then(this.componentDidMount())
+        .catch(err => console.log(err.response))
     }
 
     render() {
@@ -32,7 +31,7 @@ class Saved extends Component {
             <Jumbotron />
             <SavedResult 
             books={this.state.books}
-            deleteBook={book => this.deleteBook(book)}
+            deleteBook={this.deleteBook}
             />
             <Footer />
           </div>

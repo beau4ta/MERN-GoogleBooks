@@ -8,7 +8,7 @@ const ListResults = (props) => {
 
     if(!saveBook){
         return(
-            <div className='book-container d-flex'>
+            <div className='book-container d-flex' key={props._id}>
             <div className='book-image'>
                 <img src={props.image} alt={props.title} />
             </div>
@@ -18,8 +18,8 @@ const ListResults = (props) => {
                 <p>{props.description}</p>
             </div>
             <div className='button-container'>
-                <button className='deleteBtn' onClick={() => deleteBook(props)}><i className="fas fa-minus"></i></button>
-                <a href={props.link}><button className='viewBtn'><i className="fas fa-eye"></i></button></a>
+                <button className='deleteBtn' id={props._id} onClick={() => deleteBook(props._id)}><i className="fas fa-minus"></i></button>
+                <button className='viewBtn'><a href={props.link} target="_blank"><i className="fas fa-eye"></i></a></button>
             </div>
         </div>
         )
