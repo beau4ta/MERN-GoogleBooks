@@ -31,7 +31,7 @@ class Search extends Component {
       saveBook = book => {
         API.saveBook({
           title: book.title,
-          authors: book.authors,
+          authors: book.authors[0],
           description: book.description,
           image: book.image,
           link: book.link
