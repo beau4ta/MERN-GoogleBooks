@@ -31,13 +31,13 @@ class Search extends Component {
       saveBook = book => {
         API.saveBook({
           title: book.title,
-          author: book.author,
+          authors: book.authors,
           description: book.description,
           image: book.image,
           link: book.link
         })
         .then(res => console.log("Book Saved!", res))
-        .catch(err => console.log(err.response))
+        .catch(err => console.log(err.response, book.authors, book.infoLinks))
       }
     
       render() {

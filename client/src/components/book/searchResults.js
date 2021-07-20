@@ -4,8 +4,7 @@ import '../results/listResults.css';
 
 const SearchResult = props => {
     const { saveBook } = props;
-    const { deleteBook } = props;
-
+    console.log(props)
 
     return (props.books.length === 0) ? (
        
@@ -24,11 +23,11 @@ const SearchResult = props => {
                             <div>
                             <ListResults
                              key={book.id}
-                             title={book.title}
-                             author={book.author}
-                             description={book.description}
-                             link={book.link}
-                             image={book.image}
+                             title={book.volumeInfo.title}
+                             authors={book.volumeInfo.authors}
+                             description={book.volumeInfo.description}
+                             link={book.volumeInfo.infoLink}
+                             image={book.volumeInfo.imageLinks.thumbnail}
                              _id={book._id}
                              saveBook={saveBook}
                              />

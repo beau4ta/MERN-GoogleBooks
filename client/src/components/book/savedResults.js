@@ -3,7 +3,6 @@ import '../results/listResults.css'
 import ListResults from '../results/listResults';
 
 const SavedResult = props => {
-    const { saveBook } = props;
     const { deleteBook } = props;
     console.log(props)
     
@@ -25,7 +24,7 @@ const SavedResult = props => {
                             <ListResults
                              key={book.id}
                              title={book.title}
-                             author={book.author}
+                             authors={book.authors}
                              description={book.description}
                              link={book.link}
                              image={book.image}
