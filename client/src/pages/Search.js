@@ -9,9 +9,7 @@ import Footer from '../components/footer/footer';
 class Search extends Component {
     state = {
         search: '',
-        books: [],
-        error: '',
-        message: ''
+        books: []
       }
     
       handleInputChange = event => {
